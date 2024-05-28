@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castelo Branco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-link">Selecionar outras linhas</a>
+        </nav>
+    </header>
+    <main>
+        <div class="info-container">
+            <h1><span class="numbers">Linha 0001</span>Castelo Branco</h1>
+            <label for="departure">Selecione um ponto de partida:</label>
+            <select id="departure" name="departure" onchange="enableDaySelector()">
+                <option value="" disabled selected>Selecione um ponto de partida</option>
+                <option value="terminal">Terminal</option>
+                <option value="castelobranco">Castelo Branco</option>
+            </select>
+
+            <div class="schedule" id="schedule">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <select id="daySelector" onchange="changeDay()" disabled>
+                                    <option value="" disabled selected>Selecione o dia</option>
+                                    <option value="dias-uteis">Dias Úteis</option>
+                                    <option value="sabado">Sábado</option>
+                                    <option value="domingo">Domingo</option>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Horários</th>
+                            <th>Ponto de Partida</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-body"></tbody>
+                </table>
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
