@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Poppins", sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -128,10 +137,6 @@ a.link-button:hover {
     border-radius: 5px;
 }
 
-.info-container input[type="date"] {
-    width: calc(100% - 21px);
-}
-
 .schedule {
     margin-top: 20px;
     width: 100%;
@@ -163,6 +168,24 @@ a.link-button:hover {
     font-size: 14px;
     border: 1px solid #000;
     border-radius: 5px;
-    display: inline-block;
+}
+
+.day-selector-container {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.day-selector-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.day-selector-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
