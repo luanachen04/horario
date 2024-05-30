@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Castelo Branco</title>
+    <title>Horarios</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,35 +14,41 @@
     </header>
     <main>
         <div class="info-container">
-            <h1><span class="numbers">Linha 0001</span>Castelo Branco</h1>
+            <h1><span class="numbers">Linha 0001</span>Marilia/Garça</h1>
+            <button id="visualizarMapaBtn">Visualizar Mapa</button>
             <label for="departure">Selecione um ponto de partida:</label>
             <select id="departure" name="departure" onchange="enableDaySelector()">
                 <option value="" disabled selected>Selecione um ponto de partida</option>
-                <option value="terminal">Terminal</option>
-                <option value="castelobranco">Castelo Branco</option>
+                <option value="terminalmarilia">Terminal Marilia</option>
+                <option value="terminalgarca">Terminal Garça</option>
             </select>
+
+            <div class="day-selector-container">
+                <label for="daySelector">Selecione o dia:</label>
+                <select id="daySelector" onchange="changeDay()" disabled>
+                    <option value="" disabled selected>Selecione o dia</option>
+                    <option value="dias-uteis">Dias Úteis</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo/Feriados</option>
+                </select>
+            </div>
 
             <div class="schedule" id="schedule">
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="2">
-                                <select id="daySelector" onchange="changeDay()" disabled>
-                                    <option value="" disabled selected>Selecione o dia</option>
-                                    <option value="dias-uteis">Dias Úteis</option>
-                                    <option value="sabado">Sábado</option>
-                                    <option value="domingo">Domingo</option>
-                                </select>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Horários</th>
+                            <th>Inicio</th>
+                            <th>Chegada</th>
                             <th>Ponto de Partida</th>
                         </tr>
                     </thead>
                     <tbody id="schedule-body"></tbody>
                 </table>
             </div>
+        </div>
+        <div id="mapa-container" style="display: none;">
+            <iframe id="mapa-iframe" width="640" height="480" src=""></iframe>
+        </div>
     </main>
 
     <script src="script.js"></script>
